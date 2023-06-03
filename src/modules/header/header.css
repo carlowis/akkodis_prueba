@@ -1,0 +1,75 @@
+/* Estilos de la cabecera */
+.cabecera {
+	background-color: #f1c40f;
+	color: #fff;
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.logo img {
+	height: 60px;
+	width: auto;
+}
+nav {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+nav ul li {
+	margin-right: 10px;
+}
+
+nav ul li a {
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 18px;
+	transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+	color: #fed136;
+}
+
+span {
+	float: left;
+}
+
+span {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	flex: 1;
+}
+
+span:hover {
+	background-color: #650c11;
+	cursor: pointer;
+}
+
+.control {
+	color: white;
+	padding: 5px 10px;
+}
+
+input[type='text'] {
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border-radius: 1em;
+}
