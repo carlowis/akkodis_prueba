@@ -6,10 +6,25 @@ body {
 
 .container {
     display: flex;
+    padding: 2em
+  }
+  .left{
+    width: 35%;
+  }
+  .leftCard {
+    padding: 2em;
+    display: flex;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
   }
 
-  .left {
-    flex: 1;
+  .left img{
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+  }
+  .left h2,h4{
+    margin: 0;
   }
 
   .right {

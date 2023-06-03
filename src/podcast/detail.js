@@ -6,7 +6,7 @@ import dataDetail from '../modules/dataDetail/dataDetail.js';
 (async function () {
 	const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
-    const detailEndpoint = 'lookup?id=' + id + '&media=podcast&entity=podcastEpisode&limit=20';
+    const detailEndpoint = 'lookup?id=' + id + '&media=podcast&entity=podcastEpisode&limit=100';
     const loadingDiv = document.getElementById('loading');
     
 	showSpinner();

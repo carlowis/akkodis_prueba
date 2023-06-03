@@ -1,6 +1,6 @@
 
 // Componente de tarjeta
-function Card({ title, author, imageUrl, linkHref}) {
+function Card({ title, author, imageUrl, linkHref  }) {
   const cardElement = document.createElement('div');
   cardElement.className = 'card';
 
@@ -45,7 +45,6 @@ async function CardContainer({ dataApi }) {
       author,
       imageUrl,
       linkHref,
-      detailEndpoint,
     });
 
     cardContainer.appendChild(card);

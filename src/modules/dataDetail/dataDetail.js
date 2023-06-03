@@ -3,6 +3,9 @@ function dataDetail(data) {
 	const leftElement = document.createElement('div');
 	leftElement.className = 'left';
 
+	const leftElementCard = document.createElement('div');
+	leftElementCard.className = 'leftCard';
+
 	const imageElement = document.createElement('img');
 	imageElement.src = data.results[0].artworkUrl600;
 	imageElement.alt = 'Foto';
@@ -10,17 +13,19 @@ function dataDetail(data) {
 	const nameElement = document.createElement('h2');
 	nameElement.textContent = data.results[0].collectionCensoredName;
 
-    const authorElement = document.createElement('h3');
+	const authorElement = document.createElement('h4');
 	authorElement.textContent = 'by ' + data.results[0].artistName;
-
 
 	const descriptionElement = document.createElement('p');
 	descriptionElement.textContent = 'Descripción';
+	const descriptionElementText = document.createElement('p');
+	descriptionElementText.textContent = data.results[1].shortDescription;
 
-	leftElement.appendChild(imageElement);
-	leftElement.appendChild(nameElement);
-    leftElement.appendChild(authorElement);
-	leftElement.appendChild(descriptionElement);
+	leftElementCard.appendChild(imageElement);
+	leftElementCard.appendChild(nameElement);
+	leftElementCard.appendChild(authorElement);
+	leftElementCard.appendChild(descriptionElement);
+	leftElementCard.appendChild(descriptionElementText);
 
 	// Componente de la columna derecha
 	const rightElement = document.createElement('div');
@@ -28,15 +33,15 @@ function dataDetail(data) {
 
 	const resultsElement = document.createElement('div');
 	resultsElement.className = 'results';
-	resultsElement.textContent = 'Resultados: 5';
+	resultsElement.textContent = 'Episodes: ' + data.resultCount;
 
 	const listElement = document.createElement('ul');
 	listElement.className = 'list';
 
-	for (let i = 1; i <= 5; i++) {
+	for (let i = 1; i <= data.results.length - 1 ; i++) {
 		const listItemElement = document.createElement('li');
 		listItemElement.className = 'list-item';
-		listItemElement.textContent = `Resultado ${i}`;
+		listItemElement.textContent = `${data.results[i].trackName}`;
 
 		listElement.appendChild(listItemElement);
 	}
@@ -44,6 +49,7 @@ function dataDetail(data) {
 	rightElement.appendChild(resultsElement);
 	rightElement.appendChild(listElement);
 
+	leftElement.appendChild(leftElementCard);
 	containerElement.appendChild(leftElement);
 	containerElement.appendChild(rightElement);
 }
